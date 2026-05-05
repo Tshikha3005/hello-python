@@ -41,5 +41,43 @@ print(type(a)) # Output: <class 'tuple'> because 'a' is defined as a tuple using
 t2= 1,2,3
 print(t2) # Output: (1, 2, 3) because when you create a tuple without using parentheses, Python will still interpret it as a tuple as long as there are multiple items separated by commas. Therefore, 't2' is a tuple containing the items 1, 2, and 3, and it will be printed in the format of a tuple with parentheses.
 
-# packing and unpacking
+# append ❌
+# remove ❌
+# extend ❌
+# Below are not tuple methodds but we can use
+t = (1,2,3)
+max(t) #3
+min(t) #1
+len(t) #3
+sum(t) #6
 
+#useful operations
+(1,2) + (3,4) #(1,2,3,4)
+(1,2) * 2 #(1,2,1,2)
+2 in (1,2,3) #True
+t = (1,2,3)
+t[0] = 10 #will give error can modify
+# but
+t=  ([1,2],[3,4])
+t[0].append(99) #this will work | Tuple is immutable, but inner objects may not be
+
+d = {(1, 2): "valid"}   # ✅ tuple
+
+d = {[1, 2]: "invalid"} # ❌ list
+
+# 👉 Why?
+
+# Tuple = immutable → hashable
+# List = mutable → not hashable
+a,b = (1,2)
+print(a,b)
+
+# 🧠 10. Real Use Cases
+# Dynamic data	: List
+# Fixed data	: Tuple
+# Coordinates	: Tuple
+# DB rows	: Tuple
+# API response	: List
+# you can check items exist in tuple you can use in keyword
+my_tuple = (1,2,3)
+print(2 in my_tuple) # True
